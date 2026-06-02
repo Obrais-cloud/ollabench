@@ -1,0 +1,8 @@
+# ollafleet-compatible. Adjust hosts to your fleet.
+nodes:
+  - name: mac
+    host: http://localhost:11434
+    tags: [local, metal]
+  - name: rig
+    host: http://10.0.0.50:11434
+    tags: [gpu, cuda]

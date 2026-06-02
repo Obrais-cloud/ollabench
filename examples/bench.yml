@@ -1,0 +1,24 @@
+# A representative benchmark plan. Run with:
+#   ollabench run --fleet fleet.yml --bench bench.yml --out ./bench-out
+
+# Targets accept "model" (runs on all nodes), "model@node", or "model@tag:foo".
+targets:
+  - llama3.2:3b
+  - qwen2.5:7b-instruct
+  - llama3.1:8b@tag:gpu
+
+scenarios:
+  - tiny
+  - short
+  - medium
+  - long_gen
+
+iterations: 5
+warmup: 1
+concurrency: [1, 4]
+
+# Forwarded to Ollama options. Keep deterministic for stable timings.
+options:
+  temperature: 0
+  seed: 7
+  num_ctx: 4096

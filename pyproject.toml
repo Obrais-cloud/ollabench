@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ollabench"
+version = "0.1.0"
+description = "Performance benchmark matrix for an Ollama fleet. Measures TTFT, tok/s, and latency percentiles per (model, node, scenario) — emits a JSON matrix that ollarouter can use for perf-aware routing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Brais Revalderia" }]
+dependencies = [
+    "anyio>=4.0",
+    "click>=8.1",
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+ollabench = "ollabench.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
