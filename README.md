@@ -4,7 +4,7 @@ Fleet-wide inference benchmarking for Ollama. Find which node runs which model f
 
 When you're running a heterogeneous fleet (Mac Studio M2 Ultra, Corsair i300, Alienware 4090...), you need hard numbers — not guesses — for model placement decisions. ollabench gives you tokens/sec, time-to-first-token, latency percentiles, and prompt eval rates across every model on every node.
 
-Feeds directly into [ollaroute](https://github.com/Obrais-cloud/ollaroute) routing and [ollapark](https://github.com/Obrais-cloud/ollapark) placement decisions.
+Feeds directly into ollaroute routing and [ollapark](https://github.com/Obrais-cloud/ollapark) placement decisions.
 
 ## Install
 
